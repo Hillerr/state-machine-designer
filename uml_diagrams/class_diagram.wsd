@@ -1,4 +1,4 @@
-@startuml
+@startuml StateMachine designer package 
 
 class StateMachine {
     - StateManager state_manager
