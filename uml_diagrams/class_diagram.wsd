@@ -1,0 +1,55 @@
+@startuml
+
+class StateMachine {
+    - StateManager state_manager
+    --
+    + __init__(States=None, initial_state=None)
+    + add_state(State): None
+    + connect_states(State1, State2): None
+    + remove_state(state_name): None
+    + run(): None 
+    + export(): .txt
+}
+
+
+class StatesManager {
+    - State initial_state
+    - State current_state
+    - State last_state
+    - State[] states
+    --
+    + __init__(States)
+    + get_state(state_name)
+    + remove_state(state)
+    + add_state(State)
+    + parse_state_name(state_name)
+    + parse_state_next_states(current_state, next_state)
+    + parse_machine_integrity():
+    - _parse_initial_state(initial_state):
+
+}
+
+
+class State {
+    - str name 
+    - function on_entry
+    - function routine 
+    - function on_exit 
+    - function decision
+    - bool is_async 
+    - State[] next_states
+    --
+    + __init__(name, routine, decision, on_entry=None, on_exit=None, is_async=False)
+    + parse_next_st
+}
+
+
+class Exceptions{
+    Exception Exceptions
+}
+
+
+StatesManager "1" *-- "1.*" State 
+StateMachine "1" *-- "1" StatesManager
+
+@enduml
