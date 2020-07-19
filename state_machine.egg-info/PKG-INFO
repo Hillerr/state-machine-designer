@@ -1,10 +1,12 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.2
 Name: state-machine
 Version: 0.0.0
-Summary: UNKNOWN
+Summary: State machine designer and implementation package
 Home-page: UNKNOWN
-Author: UNKNOWN
-Author-email: UNKNOWN
 License: UNKNOWN
 Description: UNKNOWN
 Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
