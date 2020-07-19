@@ -1,2 +1,3 @@
 .vs/
 *.pyc
+.vscode/settings.json
