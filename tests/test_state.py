@@ -21,7 +21,8 @@ def test_state_init_method():
     
 
     # Execute
-    state = State(routine_function= fun_routine, 
+    state = State(name="state",
+                  routine_function= fun_routine, 
                   decision_function=fun_decision,
                   entry_function=fun_entry,
                   exit_function=fun_exit,
@@ -35,3 +36,39 @@ def test_state_init_method():
            state.is_async == False and \
            state.next_states == None
     
+
+def test_next_state_method():
+    """Testing the is_next_state method
+    """
+    # Setup
+    state1 = State(name="state1",
+                  routine_function= fun_routine, 
+                  decision_function=fun_decision,
+                  entry_function=fun_entry,
+                  exit_function=fun_exit,
+                  is_async=False)
+
+    state2 = State(name="state2",
+                  routine_function= fun_routine, 
+                  decision_function=fun_decision,
+                  entry_function=fun_entry,
+                  exit_function=fun_exit,
+                  next_states=[state1],
+                  is_async=False)
+
+    state3 = State(
+        name="state3",
+        routine_function= fun_routine, 
+        decision_function=fun_decision,
+        entry_function=fun_entry,
+        exit_function=fun_exit,
+        next_states=[state1],
+        is_async=False
+    )
+
+    # Verify
+    assert state2.is_next_state(state1) and state1.is_next_state(state2) and \
+            not state2.is_next_state(state3)
+
+
+
