@@ -58,6 +58,15 @@ class State:
         return self.name == other.name
 
 
+    def __repr__(self):
+        """State class representation method
+
+        Returns:
+            `str`: A string representation of the object
+        """
+        return f"State(name={self.name}, decision_function={self.decision_function.__name__}, routine_function={self.routine_function.__name__}, entry_function={self.entry_function.__name__}, exit_function={self.exit_function.__name__}, is_async={self.is_async}, next_states={[state.name for state in self.next_states if self.next_states is not None]})"
+    
+
     @property
     def name(self):
         """str: The state name"""
