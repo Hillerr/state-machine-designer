@@ -107,5 +107,45 @@ class StatesManager:
         return state in self.states
 
 
-    def add_state(self, state):
-        pass
+    def add_state(self, *args):
+        """Add a state to the States Manager
+
+        Args:
+            args (``State``): The state that will be added
+
+        Raises:
+            ValueError: If 'state' is not a ``State`` object
+            AddStateError: If already exists a state with the same name
+        """
+        for arg in args:
+            if not isinstance(arg, State):
+                raise ValueError(f"Param 'state' must be a State object. You passed {arg.__class__.__name__}.")
+
+            if self._exist_state(arg):
+                raise AddStateError(f"Cannot add an already existing state")
+
+            self.states.append(arg)
+
+
+    def get_state(self, state_name):
+        """Get a state by its name
+
+        Args:
+            state_name (str): The name of the state to be returned
+
+        Raises:
+            ValueError: If state_name is not a string
+
+        Returns:
+            ``State``: The requested state, if there's no state with this name, returns None
+        """
+        if not isinstance(state_name, str):
+            raise ValueError(f"Param 'state_name' must be a str. You passed a {state_name.__class__.__name__} object.")
+
+        state = [state for state in self.states if state.name == state_name]
+
+        if len(state) == 0:
+            return None
+        else:
+            return state[0]
+
