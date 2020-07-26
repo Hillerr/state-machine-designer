@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>StatesManager class documentation &mdash; State Machine Designer 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="State class documentation" href="state.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> State Machine Designer
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="state_machine.html">StateMachine class documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state.html">State class documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">StatesManager class documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">State Machine Designer</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>StatesManager class documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/states_manager.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-state_machine.states_manager">
+<span id="statesmanager-class-documentation"></span><h1>StatesManager class documentation<a class="headerlink" href="#module-state_machine.states_manager" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="state_machine.states_manager.StatesManager">
+<em class="property">class </em><code class="sig-prename descclassname">state_machine.states_manager.</code><code class="sig-name descname">StatesManager</code><a class="headerlink" href="#state_machine.states_manager.StatesManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>States Manager class</p>
+<p>This class will be responsible for executing the States functions and updating
+the state machine current state. Also verify the integrity of the machine.</p>
+<dl class="py attribute">
+<dt id="state_machine.states_manager.StatesManager.initial_state">
+<code class="sig-name descname">initial_state</code><a class="headerlink" href="#state_machine.states_manager.StatesManager.initial_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>execute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">State</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="state_machine.states_manager.StatesManager.current_state">
+<code class="sig-name descname">current_state</code><a class="headerlink" href="#state_machine.states_manager.StatesManager.current_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>performing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">State</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="state_machine.states_manager.StatesManager.last_state">
+<code class="sig-name descname">last_state</code><a class="headerlink" href="#state_machine.states_manager.StatesManager.last_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>performed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">State</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="state_machine.states_manager.StatesManager.states">
+<code class="sig-name descname">states</code><a class="headerlink" href="#state_machine.states_manager.StatesManager.states" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>list</cite> of <code class="docutils literal notranslate"><span class="pre">States</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>StatesManager initialization method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager._execute_current_state_decision">
+<code class="sig-name descname">_execute_current_state_decision</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager._execute_current_state_decision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the current state decision function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>DecisionFunctionError</strong> – If decision function doesn’t returns any state</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager._execute_current_state_entry">
+<code class="sig-name descname">_execute_current_state_entry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager._execute_current_state_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the current state entry function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager._execute_current_state_routine">
+<code class="sig-name descname">_execute_current_state_routine</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager._execute_current_state_routine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the current state routine function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager._execute_last_state_exit">
+<code class="sig-name descname">_execute_last_state_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager._execute_last_state_exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform the last state exit function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager._exist_state">
+<code class="sig-name descname">_exist_state</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager._exist_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if there is any other state with
+the same name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state</strong> (<code class="docutils literal notranslate"><span class="pre">State</span></code>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager.add_state">
+<code class="sig-name descname">add_state</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager.add_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a state to the States Manager</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="docutils literal notranslate"><span class="pre">State</span></code>) – The state that will be added</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If ‘state’ is not a <code class="docutils literal notranslate"><span class="pre">State</span></code> object</p></li>
+<li><p><strong>AddStateError</strong> – If already exists a state with the same name</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id0">
+<em class="property">property </em><code class="sig-name descname">current_state</code><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">State</span></code>: The current <code class="docutils literal notranslate"><span class="pre">State</span></code> that the state machine is performing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager.execute_current_state_functions">
+<code class="sig-name descname">execute_current_state_functions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager.execute_current_state_functions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform all current state functions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="state_machine.states_manager.StatesManager.get_state">
+<code class="sig-name descname">get_state</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#state_machine.states_manager.StatesManager.get_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a state by its name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>state_name</strong> (<em>str</em>) – The name of the state to be returned</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If state_name is not a string</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The requested state, if there’s no state with this name, returns None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">State</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id1">
+<em class="property">property </em><code class="sig-name descname">initial_state</code><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">State</span></code>: The first <code class="docutils literal notranslate"><span class="pre">State</span></code> that the state machine will execute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="id2">
+<em class="property">property </em><code class="sig-name descname">states</code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>list</cite> of <code class="docutils literal notranslate"><span class="pre">States</span></code>: All the <code class="docutils literal notranslate"><span class="pre">States</span></code> that make up the state machine</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="state.html" class="btn btn-neutral float-left" title="State class documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Rafael Hiller &amp; Jorge Gustavo
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
