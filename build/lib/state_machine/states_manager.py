@@ -174,6 +174,8 @@ class StatesManager:
             self._execute_last_state_exit()
 
         
+
+
     def add_state(self, *args):
         """Add a state to the States Manager
 
