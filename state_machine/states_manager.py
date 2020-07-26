@@ -25,7 +25,8 @@ class StatesManager:
         self.initial_state = None
         self.last_state = None
         self.current_state = None
-        self._states = [] 
+        self._states = []
+        self._updating_state = False 
 
 
     @property
@@ -44,7 +45,10 @@ class StatesManager:
             raise ValueError(f"Param 'initial_state' must be a State object. You passed {var.__class__.__name__}.")
 
         if not self._exist_state(var):
-            raise InitialStateError(f"There is no State with name {var.name} added yet. Valid states are: {state.name for state in self.states if self.states is not None}")
+            raise UnknownStateError(f"There is no State with name {var.name} added yet. Valid states are: {state.name for state in self.states if self.states is not None}")
+
+        if self.current_state is None:
+            self._current_state = var
 
         self._initial_state = var 
 
@@ -64,7 +68,7 @@ class StatesManager:
             raise ValueError(f"Param 'last_state' must be a State object. You passed {var.__class__.__name__}.")
 
         if not self._exist_state(var):
-            raise LastStateError(f"There is no State with name {var.name} added yet. Valid states are: {state.name for state in self.states if self.states is not None}")
+            raise UnknownStateError(f"There is no State with name {var.name} added yet. Valid states are: {state.name for state in self.states if self.states is not None}")
 
         self._initial_state = var 
 
@@ -86,7 +90,14 @@ class StatesManager:
             raise ValueError(f"Param 'current_state' must be a State object. You passed {var.__class__.__name__}.")
 
         if not self._exist_state(var):
-            raise CurrentStateError(f"There is no State with name {var.name} added yet. Valid states are: {state.name for state in self.states if self.states is not None}")
+            raise UnknownStateError(f"There is no State with name {var.name} added yet. Valid states are: {state.name for state in self.states if self.states is not None}")
+
+        if var != self.current_state:
+            self.last_state = self.current_state
+            self._updating_state = True
+
+        else: 
+            self._updating_state = False
 
         self._current_state = var 
 
@@ -105,6 +116,60 @@ class StatesManager:
             state (``State``): A ``State`` object
         """
         return state in self.states
+
+
+    def _execute_current_state_routine(self):
+        """Perform the current state routine function
+        """
+        if self.current_state.routine_function is not None:
+            self.current_state.routine_function()
+
+
+    def _execute_current_state_entry(self):
+        """Perform the current state entry function
+        """
+        if self.current_state.entry_function is not None:
+            self.current_state.entry_function()
+
+
+    def _execute_last_state_exit(self):
+        """Perform the last state exit function
+        """
+        if self.last_state.exit_function is not None:
+            self.last_state.exit_function()
+
+
+    def _execute_current_state_decision(self):
+        """Perform the current state decision function
+
+        Raises:
+            DecisionFunctionError: If decision function doesn't returns any state
+
+        """
+        state_name = self.current_state.decision_function()
+
+        if state_name is None:
+            raise DecisionFunctionError(f"State {self.current_state.name} decision function did not return any state.")
+
+        state = self.get_state(state_name)
+
+        if state is None:
+            raise UnknownStateError(f"Decision function from {self.last_state.name} returned an unknown state: {state_name}. ")
+
+        self.current_state = state
+
+
+    def execute_current_state_functions(self):
+        """Perform all current state functions
+        """
+        self._execute_current_state_decision()
+
+        if self._updating_state:
+            self._execute_last_state_exit()
+            self._execute_current_state_entry()
+
+        self._execute_current_state_routine()
+
 
 
     def add_state(self, *args):
