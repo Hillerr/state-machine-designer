@@ -45,8 +45,7 @@ def decision_function():
 
 #### Routine Function (optional)
 
-Routine function is used to implement some verification or action every time that the State Machine
-is in this specific state,
+Routine function is used to implement some verification or action every time that the State Machine is in this specific state.
 
 ```python
 def decision_function():
