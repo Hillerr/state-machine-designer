@@ -14,7 +14,7 @@ setup(
     author = 'Hillerr',                   # Type in your name
     author_email = 'rafaelhiller23@gmail.com',
     description="State machine designer and implementation package",
-    long_description=long_description
+    long_description=long_description,
     long_description_content_type="text/markdown",
     python_requires='>=3.6',
     url = 'https://github.com/Hillerr/state-machine-designer',
@@ -25,5 +25,4 @@ setup(
     ],
     download_url = 'https://github.com/Hillerr/state-machine-designer/archive/v0.0.0.tar.gz',
     install_requires=requirements,
-
 )
