@@ -169,3 +169,54 @@ def test_states_manager_get_state_method_non_existing_state():
     received_state = state_manager.get_state('state2')
 
     assert received_state == None
+
+
+def test_states_manager_execute_current_state_functions_method():
+    """Testing the execute_current)state_functions method
+    """
+    # Setup
+    def decision():
+        return 'state2'
+
+    def decision2():
+        return 'state3'
+
+    state1 = State(
+        name="state1",
+        routine_function= fun_routine, 
+        decision_function=decision,
+        entry_function=fun_entry,
+        exit_function=fun_exit,
+        is_async=False
+    )
+
+    state2 = State(
+        name="state2",
+        routine_function= fun_routine, 
+        decision_function=decision2,
+        entry_function=fun_entry,
+        exit_function=fun_exit,
+        is_async=False
+    )
+
+    state3 = State(
+        name="state3",
+        routine_function= fun_routine, 
+        decision_function=decision,
+        is_async=False
+    )
+
+    state_manager = StatesManager()
+    state_manager.add_state(state3, state2, state1)
+    state_manager.initial_state = state1
+
+    # Execute
+    state_manager.execute_current_state_functions()
+
+    if state_manager.current_state != state2:
+        assert False
+
+    state_manager.execute_current_state_functions()
+
+    # Verify
+    assert state_manager.current_state == state3
