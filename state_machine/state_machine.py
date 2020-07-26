@@ -1,5 +1,6 @@
 import asyncio
 from .states_manager import StatesManager
+from .state import State
 from .exceptions import *
 
 
