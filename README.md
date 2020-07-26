@@ -4,7 +4,13 @@ A quick and simple state machine package to create your own states machine with 
 
 ## Installation
 
-Clone the project and install it manually using:
+Install via PyPI:
+
+```shell
+$ pip install state-machine-designer
+```
+
+or clone the project and install it manually using:
 
 ```shell
 $ pip install .
