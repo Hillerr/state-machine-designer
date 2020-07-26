@@ -51,6 +51,8 @@ class StatesManager:
             self._current_state = var
 
         self._initial_state = var 
+        self._last_state = var
+        self._updating_state = True
 
 
     @property
@@ -162,14 +164,16 @@ class StatesManager:
     def execute_current_state_functions(self):
         """Perform all current state functions
         """
+        if self._updating_state:
+            self._execute_current_state_entry()
+
+        self._execute_current_state_routine()
         self._execute_current_state_decision()
 
         if self._updating_state:
             self._execute_last_state_exit()
-            self._execute_current_state_entry()
 
-        self._execute_current_state_routine()
-
+        
 
 
     def add_state(self, *args):
