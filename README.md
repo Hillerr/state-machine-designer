@@ -27,7 +27,7 @@ Before starting using the State Machine object, we are going to demonstrate how 
 
 #### Decision Function
 
-First of all, all states must has a decision function, which is going to return the name of the next state, or, if nothing changes, the name of the current state.
+First of all, all states must have a decision function, which is going to return the name of the next state, or, if nothing changes, the name of the current state.
 
 ```python
 import random
